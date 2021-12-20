@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Route;
         Route::get('user', [UserController::class, 'index'])->name('user');
         Route::get('user/deactivate/{id}', [UserController::class, 'deactivate'])->name('user.deactivate');
         Route::get('user/activate/{id}', [UserController::class, 'activate'])->name('user.activate');
-        Route::get('impersonate/user/{id}',[ImpersonateController::class, 'index'])->name('impersonate')->middleware('auth');
+        Route::get('impersonate/user/{id}',[ImpersonateController::class, 'index'])->name('impersonate');
         Route::get('impersonate/destroy',[ImpersonateController::class,'destroy'])->name('impersonate.destroy');
     });
  });
