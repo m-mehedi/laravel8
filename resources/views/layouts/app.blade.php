@@ -27,7 +27,6 @@
             @yield('content')
 
                 <div id="app">
-                     <h1>Hello Vue!</h1>
                      <hello-world/>
                 </div>
 

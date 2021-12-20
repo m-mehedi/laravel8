@@ -14,7 +14,7 @@ class ImpersonateController extends Controller
         if($user){
             session()->put('impersonate', $user->id);
         }
-        return redirect('dashboard');
+        return redirect('admin/user');
     }
 
     public function destroy(){

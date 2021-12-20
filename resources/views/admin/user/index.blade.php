@@ -1,5 +1,7 @@
 <x-app-layout>
 @section('content')
+<h1 class="text-green-600 text-center">Welcome, {{ Auth::user()->name }}!</h1>
+<h1 class="text-red-600 text-right"><a href="{{route('impersonate.destroy')}}">End Impersonating</a></h1>
 <div class="flex flex-col">
   <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
     <div class="py-2 inline-block min-w-full sm:px-6 lg:px-8">
@@ -54,19 +56,22 @@
               <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
                   @if($user->active==1)
                 <button class="bg-white hover:bg-yellow-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow">
-                <a href="{{ url('admin/user/deactivate/' . $user->id) }}"> <i class="fa-thin fa-pause"></i></a>
+                <a href="{{ url('admin/user/deactivate/' . $user->id) }}"> <i class="fa-light fa-user-slash text-yellow-700"></i></a>
                 </button>
                 @endif
                 @if($user->active==0)
                 <button class="bg-white hover:bg-green-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow">
-                <a href="{{ route('user.activate',$user->id) }}"><i class="fa-thin fa-play"></i></a>
+                <a href="{{ route('user.activate',$user->id) }}"><i class="fa-thin fa-play text-green-600"></i></a>
                 </button>
                 @endif
                 <button class="bg-white hover:bg-red-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow">
-                <i class="fa-light fa-user-xmark"></i>
+                <i class="fa-light fa-user-xmark text-red-500"></i>
                 </button>
                 <button class="bg-white hover:bg-blue-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow">
-                <a href="{{ route('impersonate',$user->id) }}"><i class="fa-light fa-user-unlock"></i></a>
+                <i class="fa-light fa-user-pen text-blue-600"></i>
+                </button>
+                <button class="bg-white hover:bg-yellow-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow">
+                <a href="{{ route('impersonate',$user->id) }}"><i class="fa-light fa-user-unlock text-yellow-500"></i></a>
                 </button>
               </td>
             </tr>
