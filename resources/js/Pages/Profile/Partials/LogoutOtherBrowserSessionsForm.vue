@@ -77,9 +77,9 @@
                         Cancel
                     </jet-secondary-button>
 
-                    <jet-button class="ml-2" @click="logoutOtherBrowserSessions" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
+                    <jet-success-button class="ml-2" @click="logoutOtherBrowserSessions" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
                         Log Out Other Browser Sessions
-                    </jet-button>
+                    </jet-success-button>
                 </template>
             </jet-dialog-modal>
         </template>
@@ -95,6 +95,7 @@
     import JetInput from '@/Jetstream/Input.vue'
     import JetInputError from '@/Jetstream/InputError.vue'
     import JetSecondaryButton from '@/Jetstream/SecondaryButton.vue'
+    import JetWarningButton from '@/Jetstream/WarningButton.vue'
 
     export default defineComponent({
         props: ['sessions'],
@@ -107,6 +108,7 @@
             JetInput,
             JetInputError,
             JetSecondaryButton,
+            JetWarningButton
         },
 
         data() {

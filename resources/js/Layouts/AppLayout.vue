@@ -103,11 +103,15 @@
                                     <template #content>
                                         <!-- Account Management -->
                                         <div class="block px-4 py-2 text-xs text-gray-400">
-                                            Manage Account
+                                            Your Account
                                         </div>
 
                                         <jet-dropdown-link :href="route('profile.show')">
-                                            Profile
+                                            <i class="fa-light fa-id-badge"></i> Profile
+                                        </jet-dropdown-link>
+
+                                        <jet-dropdown-link :href="route('user')">
+                                           <i class="fa-light fa-user"></i> User
                                         </jet-dropdown-link>
 
                                         <jet-dropdown-link :href="route('api-tokens.index')" v-if="$page.props.jetstream.hasApiFeatures">
@@ -119,7 +123,7 @@
                                         <!-- Authentication -->
                                         <form @submit.prevent="logout">
                                             <jet-dropdown-link as="button">
-                                                Log Out
+                                                <i class="fa-light fa-arrow-right-from-bracket"></i> Log Out
                                             </jet-dropdown-link>
                                         </form>
                                     </template>
@@ -230,6 +234,7 @@
         </div>
     </div>
 </template>
+
 
 <script>
     import { defineComponent } from 'vue'

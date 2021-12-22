@@ -30,13 +30,13 @@
                     </span>
                 </div>
 
-                <jet-secondary-button class="mt-2 mr-2" type="button" @click.prevent="selectNewPhoto">
+                <jet-success-button class="mt-2 mr-2" type="button" @click.prevent="selectNewPhoto">
                     Select A New Photo
-                </jet-secondary-button>
+                </jet-success-button>
 
-                <jet-secondary-button type="button" class="mt-2" @click.prevent="deletePhoto" v-if="user.profile_photo_path">
+                <jet-danger-button type="button" class="mt-2" @click.prevent="deletePhoto" v-if="user.profile_photo_path">
                     Remove Photo
-                </jet-secondary-button>
+                </jet-danger-button>
 
                 <jet-input-error :message="form.errors.photo" class="mt-2" />
             </div>
@@ -57,11 +57,11 @@
         </template>
 
         <template #actions>
-            <jet-action-message :on="form.recentlySuccessful" class="mr-3">
-                Saved.
+            <jet-action-message :on="form.recentlySuccessful" class="mr-3 text-green-500">
+                সফলভাবে পরিবর্তন হয়েছে!
             </jet-action-message>
 
-            <jet-button :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
+            <jet-button :class="{ 'opacity-25': form.processing } " :disabled="form.processing">
                 Save
             </jet-button>
         </template>
@@ -77,6 +77,8 @@
     import JetLabel from '@/Jetstream/Label.vue'
     import JetActionMessage from '@/Jetstream/ActionMessage.vue'
     import JetSecondaryButton from '@/Jetstream/SecondaryButton.vue'
+    import JetDangerButton from '@/Jetstream/DangerButton.vue'
+    import JetSuccessButton from '@/Jetstream/SuccessButton.vue'
 
     export default defineComponent({
         components: {
@@ -87,6 +89,8 @@
             JetInputError,
             JetLabel,
             JetSecondaryButton,
+            JetDangerButton,
+            JetSuccessButton
         },
 
         props: ['user'],

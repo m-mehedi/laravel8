@@ -17,9 +17,8 @@
 
             <!-- Email Address -->
             <div>
-                <x-label for="email" :value="__('Email')" />
-
-                <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus />
+                <x-jet-label value="{{ __('Username/Email') }}" />
+                <x-jet-input class="block mt-1 w-full" type="text" name="identity" :value="old('email')" required autofocus />
             </div>
 
             <!-- Password -->
