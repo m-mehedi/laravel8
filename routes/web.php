@@ -2,7 +2,10 @@
 
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
+use Laravel\Jetstream\Http\Controllers\Inertia\UserProfileController;
 use Inertia\Inertia;
+
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,3 +30,7 @@ Route::get('/', function () {
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->name('dashboard');
+
+Route::get('users', [UserController::class, 'index'])->name('users');
+
+require_once __DIR__ . '/jetstream.php';

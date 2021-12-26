@@ -23,6 +23,11 @@
                                     Dashboard
                                 </jet-nav-link>
                             </div>
+                            <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                                <jet-nav-link :href="route('users')" :active="route().current('users')">
+                                    Users
+                                </jet-nav-link>
+                            </div>
                         </div>
 
                         <div class="hidden sm:flex sm:items-center sm:ml-6">
@@ -52,6 +57,9 @@
                                                 <!-- Team Settings -->
                                                 <jet-dropdown-link :href="route('teams.show', $page.props.user.current_team)">
                                                     Team Settings
+                                                </jet-dropdown-link>
+                                                <jet-dropdown-link :href="route('users')">
+                                                    User
                                                 </jet-dropdown-link>
 
                                                 <jet-dropdown-link :href="route('teams.create')" v-if="$page.props.jetstream.canCreateTeams">
