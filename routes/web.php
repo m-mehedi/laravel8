@@ -32,7 +32,7 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 })->name('dashboard');
 
 Route::middleware(['auth', 'auth.admin'])->get('/admin/dashboard', function () {
-    return 'Hello, Admin!';
+    return Inertia::render('Admin/user');
 })->name('admin.dashboard');
 
 Route::get('users', [UserController::class, 'index'])->name('users');
