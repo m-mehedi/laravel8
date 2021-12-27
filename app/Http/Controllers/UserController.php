@@ -8,20 +8,19 @@ use DB;
 use Laravel\Jetstream\Jetstream;
 use Jenssegers\Agent\Agent;
 use Illuminate\Support\Carbon;
+use App\Http\Resources\UserResource;
 
 class UserController extends Controller
 {
     public function index(Request $request){
-        $users = DB::table('users')
-                            ->select('*')
-                            ->get();
-        // dd($users);
-        // return Jetstream::inertia()->render($request, 'Pages/User', [
+        $user = User::all();
+        return UserResource::collection($user);
+        // $users = DB::table('users')
+        //                     ->select('*')
+        //                     ->get();
+        // return Jetstream::inertia()->render($request, 'Profile/Show', [
         //     'sessions' => $this->sessions($request)->all(),
         // ]);
-        return Jetstream::inertia()->render($request, 'Profile/Show', [
-            'sessions' => $this->sessions($request)->all(),
-        ]);
 
         // return view('admin.user.index', compact('users'));
     }
