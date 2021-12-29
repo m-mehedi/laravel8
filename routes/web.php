@@ -31,6 +31,6 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->name('dashboard');
 
-Route::get('users', [UserController::class, 'index'])->name('users');
+Route::get('users', [UserController::class, 'index'])->name('users')->middleware(['auth.admin']);
 
 require_once __DIR__ . '/jetstream.php';
