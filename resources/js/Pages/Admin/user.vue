@@ -22,13 +22,7 @@
         </div>
 
         <div class="py-12">
-            <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-              <div v-if="$page.props.jetstream.canUpdateProfileInformation">
-                    <update-profile-information-form :user="$page.props.user" />
-
-                    <jet-section-border />
-                </div>
-            </div>
+            <h1>New</h1>
         </div>
     </app-layout>
 </template>

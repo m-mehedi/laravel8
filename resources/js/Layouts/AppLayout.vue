@@ -24,7 +24,7 @@
                                 </jet-nav-link>
                             </div>
                             <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                                <jet-nav-link :href="route('users')" :active="route().current('users')">
+                                <jet-nav-link :href="route('admin.dashboard')" :active="route().current('admin.dashboard')">
                                     Users
                                 </jet-nav-link>
                             </div>
