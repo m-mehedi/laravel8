@@ -23119,6 +23119,25 @@ __webpack_require__.r(__webpack_exports__);
     AppLayout: _Layouts_AppLayout_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
     Welcome: _Jetstream_Welcome_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
     UpdateProfileInformationForm: _Pages_Profile_Partials_UpdateProfileInformationForm_vue__WEBPACK_IMPORTED_MODULE_3__["default"]
+  },
+  data: function data() {
+    return {
+      users: []
+    };
+  },
+  mounted: function mounted() {
+    this.loadUsers();
+  },
+  methods: {
+    loadUsers: function loadUsers() {
+      var _this = this;
+
+      axios.get('/users').then(function (response) {
+        _this.users = response.data.data;
+      })["catch"](function (error) {
+        console.log(error);
+      });
+    }
   }
 }));
 

@@ -36,5 +36,13 @@ Route::middleware(['auth', 'auth.admin'])->get('/admin/dashboard', function () {
 })->name('admin.dashboard');
 
 Route::get('users', [UserController::class, 'index'])->name('users');
+Route::get('test', function(){
+    // dd(app());
+    // return view('dashboard');
+    app()->make('first_service_helper');
+});
+Route::get('test1', function(){
+    return view('test');
+});
 
 require_once __DIR__ . '/jetstream.php';

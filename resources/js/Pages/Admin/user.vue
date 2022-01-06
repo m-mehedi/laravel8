@@ -39,5 +39,25 @@
             Welcome,
             UpdateProfileInformationForm,
         },
+        data: function(){
+            return{
+                users: []
+            }
+        },
+        mounted(){
+            this.loadUsers();
+        },
+        methods: {
+            loadUsers: function(){
+                axios.get('/users')
+                .then((response) => {
+                    this.users = response.data.data;
+                })
+                .catch(function(error){
+                    console.log(error);
+                });
+            }
+        }
+
     })
 </script>
