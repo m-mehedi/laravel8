@@ -14,15 +14,15 @@ class UserController extends Controller
 {
     public function index(Request $request){
         $user = User::all();
-        return UserResource::collection($user);
-        // $users = DB::table('users')
-        //                     ->select('*')
-        //                     ->get();
+        // return UserResource::collection($user);
+        $users = DB::table('users')
+                            ->select('*')
+                            ->get();
         // return Jetstream::inertia()->render($request, 'Profile/Show', [
         //     'sessions' => $this->sessions($request)->all(),
         // ]);
 
-        // return view('admin.user.index', compact('users'));
+        return view('admin.user.index', compact('users'));
     }
     // }
 

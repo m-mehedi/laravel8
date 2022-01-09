@@ -42,7 +42,8 @@ Route::get('test', function(){
     app()->make('first_service_helper');
 });
 Route::get('test1', function(){
-    return view('test');
+    Add::test();
+    // return view('test');
 });
 
 require_once __DIR__ . '/jetstream.php';

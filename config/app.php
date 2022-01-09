@@ -177,6 +177,7 @@ return [
         App\Providers\FortifyServiceProvider::class,
         App\Providers\JetstreamServiceProvider::class,
         App\Providers\SharedViewServiceProviders::class,
+        App\Providers\CustomServiceProvider::class,
 
     ],
 
@@ -232,6 +233,7 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+        'Add' => App\Repositories\Test::class,
 
     ],
 
